@@ -48,22 +48,24 @@ public class Main {
         int deposit2 = 15000;
         double percentMonth2 = 0.07;
         int accumulation2 = 12_000_000;
-        int month2 = 1;
+        int month2 = 0;
         while (deposit2 <= accumulation2) {
-            deposit2 += (int) (deposit2 * percentMonth2);
+            deposit2 = (int) (deposit2 * (1 + percentMonth2));
             month2++;
             if (month2 % 6 == 0) {
                 System.out.println("В " + month2 + " месяц, сумма накоплений составит: " + deposit2);
             }
         }
         System.out.println("Задача 6");
+        months = 0;
         int deposit3 = 15000;
         double percent = 0.07;
-        int monthOn6 = 108;
-        for (int i = 0; i < monthOn6; i = i + 6) {
-            deposit3 = (int) (deposit3 + (deposit3 * (percent * 6)));
-            if (monthOn6 % 6 == 0) {
-            System.out.println("Через " + i + " месяцев сумма накоплений: " + deposit3 + " рублей");
+        int monthsMax = 108;
+        while (months < monthsMax) {
+            deposit3 = (int) (deposit3 * (1 + percent));
+            months++;
+            if (months % 6 == 0) {
+            System.out.println("Через " + months + " месяцев сумма накоплений: " + deposit3 + " рублей");
             }
         }
         System.out.println("Задача 7");
