@@ -50,18 +50,21 @@ public class Main {
         int accumulation2 = 12_000_000;
         int month2 = 1;
         while (deposit2 <= accumulation2) {
-            deposit2 += deposit2 * percentMonth2;
-        if (month2 % 6 == 0)
-            System.out.println("В " + month2 + " месяц, сумма накоплений составит: " + deposit2);
-        month2++;
+            deposit2 += (int) (deposit2 * percentMonth2);
+            month2++;
+            if (month2 % 6 == 0) {
+                System.out.println("В " + month2 + " месяц, сумма накоплений составит: " + deposit2);
+            }
         }
         System.out.println("Задача 6");
         int deposit3 = 15000;
         double percent = 0.07;
         int monthOn6 = 108;
         for (int i = 0; i < monthOn6; i = i + 6) {
-            deposit3 += (deposit3 * percent) * 6;
-            System.out.println("Через " + (i + 6) + " месяцев сумма накоплений: " + deposit3 + " рублей");
+            deposit3 = (int) (deposit3 + (deposit3 * (percent * 6)));
+            if (monthOn6 % 6 == 0) {
+            System.out.println("Через " + i + " месяцев сумма накоплений: " + deposit3 + " рублей");
+            }
         }
         System.out.println("Задача 7");
         int firstFriday = 6;
